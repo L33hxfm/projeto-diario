@@ -90,9 +90,41 @@ function excluirConta() {
   window.location.href = "../index.html";
 }
 
+// Inicializar Firebase
+const firebaseConfig = {
+  apiKey: "SUA-CHAVE",
+  authDomain: "SEU-PROJETO.firebaseapp.com",
+  projectId: "SEU-PROJETO",
+  storageBucket: "SEU-PROJETO.appspot.com",
+  messagingSenderId: "NUMERO",
+  appId: "ID"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// Salvar nota
+function salvarEntrada(texto, usuario) {
+  db.collection("notas").add({
+    usuario: usuario,
+    texto: texto,
+    data: new Date().toISOString()
+  });
+}
+
+// Carregar notas
+function carregarEntradas(usuario) {
+  db.collection("notas").where("usuario", "==", usuario)
+    .get().then(snapshot => {
+      snapshot.forEach(doc => {
+        console.log(doc.data().texto);
+      });
+    });
+}
+
 
 // Carregar automaticamente quando abre o diário
 document.addEventListener("DOMContentLoaded", mostrarEntradas);
+
 
 
 
