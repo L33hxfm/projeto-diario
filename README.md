@@ -50,13 +50,13 @@ O objetivo é praticar manipulação de **DOM**, **localStorage** e criar uma ap
 1. Clone o repositório:
 git clone https://github.com/L33hxfm/projeto-diario.git
 
- 2.Abra o arquivo index.html no navegador.
+2. Abra o arquivo index.html no navegador.
 
- 3.Cadastre um novo usuário ou faça login com um usuário existente.
+3. Cadastre um novo usuário ou faça login com um usuário existente.
 
- 4. No diário, adicione notas e use os botões para excluir notas ou a conta.
-
- 5.Todas as informações ficam armazenadas localmente no navegador.
+4. No diário, adicione notas e use os botões para excluir notas ou a conta.
+   
+5. Todas as informações ficam armazenadas localmente no navegador.
 
 ---
 
