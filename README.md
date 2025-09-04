@@ -1,75 +1,109 @@
-# projeto-diario
-# Diário Online
+# 📖 Meu Diário
 
-## Descrição do Projeto
-Este é um **Diário Online** simples feito em HTML, CSS e JavaScript puro, com armazenamento local (localStorage).  
-Ele permite que usuários criem uma conta, façam login, adicionem notas diárias, vejam suas notas e também excluam notas individualmente ou a conta inteira.
-
-O objetivo é praticar manipulação de **DOM**, **localStorage** e criar uma aplicação interativa leve sem backend.
+Um site simples de **diário pessoal** feito com **HTML, CSS, JavaScript e Firebase**.  
+Você pode criar uma conta, fazer login e salvar suas anotações de forma segura na nuvem.
 
 ---
 
-## Funcionalidades
+## ✨ Funcionalidades
 
-- **Cadastro de usuário** (usuário e senha)
-- **Login/logout**
-- **Adicionar notas** com data automática
-- **Visualizar notas**
-- **Excluir notas individuais**
-- **Excluir conta inteira**
-- Alertas simples para ações de sucesso ou erro
-- Armazenamento local via `localStorage` (sem banco de dados externo)
+- 👤 Cadastro/Login com **Firebase Authentication**  
+- 📝 Criar, listar e excluir entradas do diário  
+- ☁️ Persistência de dados no **Firebase Firestore**  
+- 🔐 Logout seguro e opção de excluir conta  
+- 📱 Design responsivo (funciona em celular e desktop)  
 
 ---
 
-## Tecnologias Utilizadas
+## 🚀 Como rodar o projeto
 
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- LocalStorage (para persistência de dados)
+1. Clone este repositório:
 
----
-
-## Estrutura de Pastas
-
-/projeto-diario <br>
-│ <br>
-├─ index.html # Tela de login/cadastro <br>
-├─ diario.html # Tela principal do diário <br>
-├─ /css <br>
-│ └─ style.css # Estilos do site <br>
-└─ /js <br>
-└─ script.js # Lógica de cadastro, login, notas e exclusão
-
-
----
-
-## Como Usar Localmente
-
-1. Clone o repositório:
+```bash
 git clone https://github.com/L33hxfm/projeto-diario.git
+```
 
-2. Abra o arquivo index.html no navegador.
+2. Entre na pasta do projeto:
 
-3. Cadastre um novo usuário ou faça login com um usuário existente.
+```bash
+cd meu-diario
+```
 
-4. No diário, adicione notas e use os botões para excluir notas ou a conta.
-   
-5. Todas as informações ficam armazenadas localmente no navegador.
+3. Crie um projeto no [Firebase Console](https://console.firebase.google.com/).  
+   - Ative **Authentication → E-mail/Senha**  
+   - Ative **Cloud Firestore Database**  
+
+4. Copie as credenciais do Firebase (`firebaseConfig`) e cole no arquivo `script.js`:
+
+```javascript
+const firebaseConfig = {
+  apiKey: "SUA_API_KEY",
+  authDomain: "SEU_PROJETO.firebaseapp.com",
+  projectId: "SEU_PROJETO",
+  storageBucket: "SEU_PROJETO.appspot.com",
+  messagingSenderId: "SEU_SENDER_ID",
+  appId: "SUA_APP_ID"
+};
+```
+
+5. Abra o arquivo `index.html` no navegador.  
+   > 💡 Não precisa de servidor, funciona direto em qualquer navegador moderno.
 
 ---
 
-## Observações
+## 🔒 Regras do Firestore
 
-O projeto não possui backend. Todos os dados são salvos localmente no navegador, então ao limpar o cache ou mudar de navegador, os dados serão perdidos.
+No Firebase Console, configure suas regras do Firestore para que **cada usuário só veja suas próprias notas**:
 
-Cuidado ao usar o botão Excluir Conta, pois todos os dados do usuário serão removidos permanentemente.
-
-O estilo é minimalista, mas você pode personalizar o CSS como quiser.
+```javascript
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /notas/{document} {
+      allow read, write: if request.auth != null && request.auth.uid == resource.data.userId;
+    }
+  }
+}
+```
 
 ---
 
-## Contato
+## 📂 Estrutura do projeto
 
-Se tiver dúvidas ou quiser colaborar, entre em contato pelo Instagram: @l33hxfm
+```
+📁 projeto-diario
+ ├── 📄 index.html        # Tela de login e cadastro
+ ├─ 📁 pages
+     └── 📄 diario.html       # Tela principal do diário
+ ├─ 📁 CSS
+     └── 📄 style.css        # Estilos globais
+ ├─ 📁 JS
+     └── 📄 script.js          # Lógica com Firebase (auth + firestore)
+ └── 📄 README.md         # Documentação do projeto
+```
+
+---
+
+<!--## 🖼️ Preview
+
+### Tela de Login / Cadastro
+![Login](./prints/login.png)
+
+### Tela do Diário
+![Diário](./prints/diario.png)
+
+--->
+
+## 🔮 Ideias para melhorias
+
+- [ ] Exportar notas em **PDF** ou **Markdown**  
+- [ ] Modo **dark/light** personalizável  
+- [ ] Pesquisa e filtros nas anotações  
+- [ ] Upload de imagens no diário (Firebase Storage)  
+- [ ] Melhorar regras de segurança do Firestore  
+
+---
+
+## 📜 Licença
+
+Este projeto é open-source e pode ser usado livremente.  
