@@ -18,7 +18,6 @@ async function login() {
 
     try {
         await firebase.auth().signInWithEmailAndPassword(email, senha);
-        alert("Login feito com sucesso!");
         window.location.href = "./pages/diario.html";
     } catch (error) {
         alert("Erro no login: " + error.message);
@@ -104,3 +103,4 @@ firebase.auth().onAuthStateChanged(user => {
         carregarEntradas();
     }
 });
+
