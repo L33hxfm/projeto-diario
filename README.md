@@ -33,13 +33,13 @@ O objetivo é praticar manipulação de **DOM**, **localStorage** e criar uma ap
 
 ## Estrutura de Pastas
 
-/projeto-diario
-│
-├─ index.html # Tela de login/cadastro
-├─ diario.html # Tela principal do diário
-├─ /css
-│ └─ style.css # Estilos do site
-└─ /js
+/projeto-diario <br>
+│ <br>
+├─ index.html # Tela de login/cadastro <br>
+├─ diario.html # Tela principal do diário <br>
+├─ /css <br>
+│ └─ style.css # Estilos do site <br>
+└─ /js <br>
 └─ script.js # Lógica de cadastro, login, notas e exclusão
 
 
