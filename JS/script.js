@@ -18,7 +18,7 @@ function login() {
 
     if (localStorage.getItem(email) === senha) {
         localStorage.setItem("logado", email);
-        window.location.href = "diario.html";
+        window.location.href = "../pages/diario.html";
     } else {
         alert("Usuário ou senha incorretos!");
     }
@@ -93,3 +93,4 @@ function excluirConta() {
 
 // Carregar automaticamente quando abre o diário
 document.addEventListener("DOMContentLoaded", mostrarEntradas);
+
