@@ -87,12 +87,13 @@ function excluirConta() {
   localStorage.removeItem("logado");
 
   alert("Conta excluída com sucesso!");
-  window.location.href = "Index.html";
+  window.location.href = "index.html";
 }
 
 
 // Carregar automaticamente quando abre o diário
 document.addEventListener("DOMContentLoaded", mostrarEntradas);
+
 
 
 
