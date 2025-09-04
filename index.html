@@ -19,6 +19,29 @@
         <input type="password" id="novaSenha" placeholder="Nova senha">
         <button onclick="cadastro()">Cadastrar</button>
     </div>
+
+    <!-- Firebase SDKs (carregar primeiro) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <script>
+        // Config do seu projeto
+        const firebaseConfig = {
+            apiKey: "AIzaSyCW0pbg8O5ZvdTNcbbSkRomtz1io0-j6dI",
+            authDomain: "notas-1ac48.firebaseapp.com",
+            projectId: "notas-1ac48",
+            storageBucket: "notas-1ac48.appspot.com",
+            messagingSenderId: "385509576970",
+            appId: "1:385509576970:web:b3996af655872c5a746af3",
+            measurementId: "G-0EE9RK4S5Q"
+        };
+
+        // Inicializa Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    
     <script src="./JS/script.js"></script>
 </body>
 
