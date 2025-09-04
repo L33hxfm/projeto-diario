@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>Meu Diário</title>
   <link rel="stylesheet" href="../CSS/style.css">
 </head>
+
 <body class="diario">
   <header>
-  <h2>Meu Diário</h2>
-  <div>
-    <button onclick="logout()">Sair</button>
-    <button onclick="excluirConta()" style="margin-left:10px;">Excluir Conta</button>
-  </div>
-</header>
+    <h2>Meu Diário</h2>
+    <div>
+      <button onclick="logout()">Sair</button>
+      <button onclick="excluirConta()" style="margin-left:10px;">Excluir Conta</button>
+    </div>
+  </header>
 
 
   <main>
@@ -20,10 +22,32 @@
     <button onclick="salvarEntrada()">Salvar</button>
 
     <h3>Minhas entradas</h3>
-    <ul id="listaEntradas"></ul>
+    <ul id="listaNotas"></ul>
+
   </main>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <script>
+    // Sua configuração do Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyCW0pbg8O5ZvdTNcbbSkRomtz1io0-j6dI",
+      authDomain: "notas-1ac48.firebaseapp.com",
+      projectId: "notas-1ac48",
+      storageBucket: "notas-1ac48.appspot.com",
+      messagingSenderId: "385509576970",
+      appId: "1:385509576970:web:b3996af655872c5a746af3",
+      measurementId: "G-0EE9RK4S5Q"
+    };
+
+    // Inicializa Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 
   <script src="../JS/script.js"></script>
 </body>
-</html>
 
+</html>
