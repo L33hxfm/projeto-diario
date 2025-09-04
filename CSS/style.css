@@ -1,58 +1,147 @@
+/* --- ESTILO GERAL --- */
 body {
-    font-family: Arial, sans-serif;
-    background: #f0f0f0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
     margin: 0;
     padding: 0;
     text-align: center;
+    color: #f5f5f5;
 }
 
+/* --- CONTAINER PRINCIPAL --- */
 .container {
-    margin-top: 10%;
-    background: white;
-    padding: 20px;
+    margin: 5% auto;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 25px;
     display: inline-block;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #aaa;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    width: 90%;
+    max-width: 500px;
 }
 
+/* --- INPUTS / TEXTAREA / BOTÕES --- */
 input,
 textarea,
 button {
     display: block;
-    margin: 10px auto;
-    padding: 10px;
-    width: 80%;
+    margin: 12px auto;
+    padding: 12px;
+    width: 85%;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    outline: none;
 }
 
-.diario {
-    background: url("assets/bg1.jpg") no-repeat center center fixed;
-    background-size: cover;
-    color: white;
+input,
+textarea {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f5f5f5;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-h3{
-    color: black;
-}
-
-#listaNotas {
-    color: black;
+textarea {
+    min-height: 100px;
+    resize: vertical;
 }
 
 button {
-  padding: 5px 10px;
-  cursor: pointer;
+    background: #ff4b2b;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-button[onclick*="excluir"] {
-  background-color: #ff4d4d;
-  color: white;
-  border: none;
-  border-radius: 5px;
+button:hover {
+    background: #ff416c;
+}
+
+/* --- HEADER --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px 10px 0 0;
+}
+
+/* --- TITULOS --- */
+h3 {
+    color: #f5f5f5;
+    margin: 0 0 15px 0;
+}
+
+/* --- LISTA DE NOTAS --- */
+#listaNotas {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+#listaNotas li {
+    background: rgba(255, 255, 255, 0.08);
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Botão excluir */
+#listaNotas button {
+    background: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#listaNotas button:hover {
+    background: #ff1a1a;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    input,
+    textarea,
+    button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        margin: 10% auto;
+        padding: 10px;
+    }
+
+    textarea {
+        min-height: 80px;
+    }
+
+    button {
+        padding: 10px;
+    }
 }
