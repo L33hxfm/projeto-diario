@@ -33,3 +33,43 @@ O objetivo é praticar manipulação de **DOM**, **localStorage** e criar uma ap
 
 ## Estrutura de Pastas
 
+/projeto-diario
+│
+├─ index.html # Tela de login/cadastro
+├─ diario.html # Tela principal do diário
+├─ /css
+│ └─ style.css # Estilos do site
+└─ /js
+└─ script.js # Lógica de cadastro, login, notas e exclusão
+
+
+---
+
+## Como Usar Localmente
+
+1. Clone o repositório:
+git clone https://github.com/L33hxfm/projeto-diario.git
+
+2.Abra o arquivo index.html no navegador.
+
+Cadastre um novo usuário ou faça login com um usuário existente.
+
+No diário, adicione notas e use os botões para excluir notas ou a conta.
+
+Todas as informações ficam armazenadas localmente no navegador.
+
+---
+
+## Observações
+
+O projeto não possui backend. Todos os dados são salvos localmente no navegador, então ao limpar o cache ou mudar de navegador, os dados serão perdidos.
+
+Cuidado ao usar o botão Excluir Conta, pois todos os dados do usuário serão removidos permanentemente.
+
+O estilo é minimalista, mas você pode personalizar o CSS como quiser.
+
+---
+
+## Contato
+
+Se tiver dúvidas ou quiser colaborar, entre em contato pelo Instagram: @l33hxfm
