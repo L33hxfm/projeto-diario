@@ -27,7 +27,7 @@ function login() {
 // Logout
 function logout() {
     localStorage.removeItem("logado");
-    window.location.href = "index.html";
+    window.location.href = "./index.html";
 }
 
 // Salvar entrada do diário
@@ -93,6 +93,7 @@ function excluirConta() {
 
 // Carregar automaticamente quando abre o diário
 document.addEventListener("DOMContentLoaded", mostrarEntradas);
+
 
 
 
