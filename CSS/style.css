@@ -4,20 +4,23 @@ body {
     background: linear-gradient(135deg, #141e30, #243b55);
     margin: 0;
     padding: 0;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
     color: #f5f5f5;
 }
 
 /* --- CONTAINER PRINCIPAL --- */
 .container {
-    margin: 5% auto;
-    background: rgba(0, 0, 0, 0.6);
+    margin-top: 40px;
+    background: rgba(0, 0, 0, 0.75);
     padding: 25px;
-    display: inline-block;
     border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     width: 90%;
-    max-width: 500px;
+    max-width: 600px;
+    text-align: center;
 }
 
 /* --- INPUTS / TEXTAREA / BOTÕES --- */
@@ -27,7 +30,7 @@ button {
     display: block;
     margin: 12px auto;
     padding: 12px;
-    width: 85%;
+    width: 90%;
     border-radius: 8px;
     border: none;
     font-size: 15px;
@@ -36,8 +39,8 @@ button {
 
 input,
 textarea {
-    background: rgba(255, 255, 255, 0.1);
-    color: #f5f5f5;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -64,14 +67,15 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 12px 20px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px 10px 0 0;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 /* --- TITULOS --- */
-h3 {
-    color: #f5f5f5;
-    margin: 0 0 15px 0;
+h3, h1, h2 {
+    color: #fff;
+    margin-bottom: 15px;
 }
 
 /* --- LISTA DE NOTAS --- */
@@ -82,13 +86,20 @@ h3 {
 }
 
 #listaNotas li {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
     margin: 10px 0;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 14px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+#listaNotas li:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
 }
 
 /* Botão excluir */
@@ -96,7 +107,7 @@ h3 {
     background: #ff4d4d;
     border: none;
     color: white;
-    padding: 6px 10px;
+    padding: 6px 12px;
     border-radius: 5px;
     font-size: 14px;
     cursor: pointer;
@@ -133,8 +144,8 @@ h3 {
     }
 
     .container {
-        margin: 10% auto;
-        padding: 10px;
+        margin-top: 20px;
+        padding: 15px;
     }
 
     textarea {
